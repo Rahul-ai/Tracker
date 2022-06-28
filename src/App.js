@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './component/Header';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+
+const App = () =>
+{
+    return(<Header title="ABC" />)
 }
 
 export default App;
