@@ -5,7 +5,11 @@ import Header from './component/Header';
 
 const App = () =>
 {
-    return(<Header title="ABC" />)
+    return(
+      <div className='container'>
+        <Header/>
+      </div>
+    )
 }
 
 export default App;
