@@ -6,7 +6,7 @@ import Header from './component/Header';
 
 const App = () =>
 {
-  const [Tasks, setState] = useState([
+  const [Tasks, setTasks] = useState([
     { 
         id: 1,
         text: 'Doctors Appointment',
@@ -14,24 +14,34 @@ const App = () =>
         reminder: true,
     },
     {
-        id: 1,
+        id: 2,
         text: 'Teachers Appointment',
         day: 'Feb 6',
         reminder: false,
     },
     {
-        id: 1,
+        id: 3,
         text: 'FireMan Appointment',
         day: 'Feb 7',
         reminder: true,
     }
 ]);
 
+//const delete Task
+const DeleteTask = (id) => {
+  setTasks(Tasks.filter((task)=>task.id !== id));
+}
+
     return(
       <div className='container'>
         <Header/>
-        <Taskss Tasks={Tasks} />
-      </div>
+        {
+        Tasks.length > 0 ? (
+        <Taskss Tasks={Tasks} OnDelete = {DeleteTask} />
+        ):(
+        <h3>No Tasks TO Show </h3>)
+        }
+        </div>
     )
 }
 

@@ -2,7 +2,8 @@ import { FaTimes } from 'react-icons/fa'
 const Task = (props) => {
   return (
     <div className='task'>
-      <h3>{props.task.text}<FaTimes style={{color:'blue'}}/></h3>
+      <h3>{props.task.text}<FaTimes style={{color:'blue'}} 
+      onClick={()=>props.OnDelete(props.task.id)}/></h3>
       <p>{props.task.day}</p>
     </div>
   );
