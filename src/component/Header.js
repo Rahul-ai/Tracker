@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <header className='header'>
        <h1>{props.title}</h1>
-       <Button color='green' text='Add Task'/>
+       <Button color={props.show ? 'red':'green'} text={props.show ? 'Close':'Add Task'} onClick={props.onAddclick}/>
     </header>
   );
 }

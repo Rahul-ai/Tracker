@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const button = (props) => {
-    const Onclick = (e) =>
-    {
-        console.log(e);
-    }
   return (
     <div>
-     <button onClick={Onclick}
+     <button onClick={props.onClick}
       style={{backgroundColor: props.color}}
       className='btn'>{props.text}</button>
     </div>
