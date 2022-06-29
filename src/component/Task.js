@@ -10,7 +10,7 @@ const Task = (props) => {
       <p>Reminder<input type="checkbox" class="form-check-input" 
       onClick={()=>props.OnToggle(props.task.id)} value="checkedValue" 
       checked = {props.task.reminder} /></p>
-      </div>    
+      </div>      
   );
 }
 
