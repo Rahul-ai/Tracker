@@ -7,9 +7,9 @@ const Task = (props) => {
 
       <p>{props.task.day}</p>
 
-      <p>Reminder<input type="checkbox" class="form-check-input" 
+      {/* <p>Reminder<input type="checkbox" class="form-check-input" 
       onClick={()=>props.OnToggle(props.task.id)} value="checkedValue" 
-      checked = {props.task.reminder} /></p>
+      checked = {props.task.reminder} /></p> */}
       </div>      
   );
 }
