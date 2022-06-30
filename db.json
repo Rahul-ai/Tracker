@@ -10,7 +10,7 @@
       "id": "2",
       "text": "Teachers Appointment",
       "day": "Feb 6",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": "3",

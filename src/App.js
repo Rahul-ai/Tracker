@@ -3,6 +3,9 @@ import './App.css';
 import Taskss from './component/Tasks'
 import Header from './component/Header';
 import AddTask from './component/AddTask';
+import Footer from './component/footer';
+import About from './component/About'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 const App = () =>
 {
@@ -30,7 +33,6 @@ const App = () =>
     const res = await fetch(`http://localhost:5000/task/${id}`)
     const data = await res.json()
     return data
-
   }
 
 //show Add Task
@@ -82,16 +84,28 @@ const ToggleReminder = async (id) =>{
 }
 
     return(
+      <Router>
       <div className='container'> 
         <Header onAddclick={onAddclick} show={showAddTask}/>
-        {showAddTask && <AddTask OnAdd = {addTask} />}
-        {
-        Tasks.length > 0 ? (
-        <Taskss Tasks={Tasks} OnDelete = {DeleteTask} OnToggle ={ToggleReminder}/>
-        ):(
-        <h3>No Tasks TO Show </h3>)
-        }
+        
+        <Routes>
+        <Route path='/' exact element={
+            <>
+            {showAddTask && <AddTask OnAdd = {addTask} />}
+            {
+              Tasks.length > 0 ? (
+              <Taskss Tasks={Tasks} OnDelete = {DeleteTask} OnToggle ={ToggleReminder}/>
+              ):(
+              <h3>No Tasks TO Show </h3>)
+              }
+            </>
+          } 
+          />
+       <Route path='/about' element = {<About />} />
+       </Routes>
+        <Footer />
         </div>
+        </Router>
     )
 }
 
